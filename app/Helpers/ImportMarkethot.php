@@ -15,9 +15,6 @@ class ImportMarkethot{
         $response = json_decode($client->get(config('settings.url'))
             ->getBody(), true);
 
-//        DB::table('categories')->delete();
-//        DB::table('offers')->delete();
-
         foreach($response['products'] as $product){
 
             foreach($product['offers'] as $offer){

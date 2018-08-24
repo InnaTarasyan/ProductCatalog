@@ -10,13 +10,9 @@ Products.prototype.init = function (category) {
         "serverSide": true,
         "ajax": {
             url:  $('#data_route').val(),
-            type: 'POST',
             data: {
-                _token: $('meta[name="_token"]').attr('content'),
                 category : category,
-                dataType: "JSON"
             },
-
         },
         "iDisplayLength": 20,
         "columns": [
