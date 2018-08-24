@@ -6,7 +6,7 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables as Datatables;
-
+use DB;
 
 class HomeController extends Controller
 {
@@ -18,10 +18,13 @@ class HomeController extends Controller
 
     public function getData(Request $request){
 
-        $data = Product::select('products.*',  'categories.alias',  'categories.title AS cat_title' )
+        $data = Product::select('products.*',  'categories.alias',  'categories.title AS cat_title', DB::raw('SUM(offers.sales) as popular') )
             ->join('product_category', 'product_category.product_id', '=', 'products.id')
             ->join('categories', 'product_category.category_id', '=', 'categories.id')
+            ->join('product_offer', 'products.id', '=', 'product_offer.product_id')
+            ->join('offers', 'product_offer.offer_id', '=', 'offers.id')
             ->where('alias', 'like', '%'.$request->get('category').'%')
+            ->orderBy('popular', 'DESC')
             ->groupBy('products.id')
             ->get();
 

@@ -5,7 +5,6 @@ function Products(){
 
 Products.prototype.init = function (category) {
 
-
     $('#data').DataTable({
         "processing": true,
         "serverSide": true,
