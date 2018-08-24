@@ -1,6 +1,7 @@
 <html>
    <head>
        <title> Product Catalog </title>
+       <meta name="_token" content="{{ csrf_token() }}">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        @yield('css')
    </head>

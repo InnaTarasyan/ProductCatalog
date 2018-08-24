@@ -6,7 +6,15 @@
 @section('content')
     <div class="container" style="padding-top: 2%">
         <!--Begin::Section-->
-            <div>
+        <select name="category" id="category" class="form-control">
+            <option value="">Поиск по категории</option>
+            @foreach($categories as $category)
+                <option value="{{ $category['alias'] }}"> {{ $category['title'] }} </option>
+            @endforeach
+        </select>
+
+
+            <div style="padding-top: 2%">
                 <input type="hidden" id="data_route" value="{{ route('datatable.getData') }}">
                 <div class="table-responsive">
                     <table id="data" class="table table-hover table-condensed table-striped" style="width:100%; padding-top:1%">
@@ -19,6 +27,7 @@
                                 <th>URL</th>
                                 <th>Price</th>
                                 <th>Amount</th>
+                                <th>Category</th>
                             </tr>
                         </thead>
                     </table>

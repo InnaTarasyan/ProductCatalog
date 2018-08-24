@@ -3,11 +3,22 @@ function Products(){
 
 }
 
-Products.prototype.init = function () {
-    var oTable = $('#data').DataTable({
+Products.prototype.init = function (category) {
+
+
+    $('#data').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": $('#data_route').val(),
+        "ajax": {
+            url:  $('#data_route').val(),
+            type: 'POST',
+            data: {
+                _token: $('meta[name="_token"]').attr('content'),
+                category : category,
+                dataType: "JSON"
+            },
+
+        },
         "iDisplayLength": 20,
         "columns": [
             {data: 'title', name: 'title'},
@@ -16,13 +27,19 @@ Products.prototype.init = function () {
             {data: 'first_invoice', name: 'first_invoice', "defaultContent" : 'Not Set'},
             {data: 'url', name: 'url'},
             {data: 'price', name: 'price'},
-            {data: 'amount', name: 'amount'}
+            {data: 'amount', name: 'amount'},
+            {data: 'cat_title', name: 'cat_title'}
         ]
     });
 };
 
 Products.prototype.bindEvents = function () {
+    $(document).on('change', '#category', this.changeCategory.bind(this));
+};
 
+Products.prototype.changeCategory = function () {
+    $('#data').DataTable().clear().destroy();
+    this.init($( "#category option:selected" ).val());
 };
 
 $(document).ready(function() {
