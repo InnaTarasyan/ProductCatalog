@@ -16,11 +16,11 @@ class Product extends Model
         'price',
         'amount'];
 
-    public function offer(){
-        return $this->belongsTo('App\Offer',  'product_offer', 'product_id', 'offer_id');
+    public function offers(){
+        return $this->belongsToMany('App\Offer',  'product_offer', 'product_id', 'offer_id');
     }
 
-    public function category(){
+    public function categories(){
         return $this->belongsToMany('App\Category', 'product_category');
     }
 }
