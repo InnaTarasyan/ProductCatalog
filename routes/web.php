@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/getData', ['as' => 'datatable.getData','uses' => 'HomeController@getData']);
