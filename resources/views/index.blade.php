@@ -20,14 +20,14 @@
                     <table id="data" class="table table-hover table-condensed table-striped" style="width:100%; padding-top:1%">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Image</th>
-                                <th>Description</th>
-                                <th>First Invoice</th>
-                                <th>URL</th>
-                                <th>Price</th>
-                                <th>Amount</th>
-                                <th>Category</th>
+                                <th>Название</th>
+                                <th>Изображение</th>
+                                <th>Описание</th>
+                                <th>Первая Продажа</th>
+                                <th>Ссылка</th>
+                                <th>Цена</th>
+                                <th>Количество</th>
+                                <th>Категория</th>
                             </tr>
                         </thead>
                     </table>

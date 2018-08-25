@@ -36,8 +36,14 @@ class HomeController extends Controller
                 else
                     return $product->description;
             })
+            ->editColumn('url', function($product) {
+                if(strlen($product->url)  > 25)
+                    return  mb_substr($product->url, 0, 25).'...';
+                else
+                    return $product->url;
+            })
             ->editColumn('image', function($product) {
-               return '<img src="'.$product->image.'" title="'.$product->title.'" width="60%">';
+               return '<img src="'.$product->image.'" title="'.$product->title.'" width="70%">';
             })
             ->rawColumns(['image'])
             ->make(true);

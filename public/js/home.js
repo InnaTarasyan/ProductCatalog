@@ -24,7 +24,11 @@ Products.prototype.init = function (category) {
             {data: 'price', name: 'price'},
             {data: 'amount', name: 'amount'},
             {data: 'cat_title', name: 'cat_title'}
-        ]
+        ],
+        "language": {
+            "url":  "//cdn.datatables.net/plug-ins/1.10.19/i18n/Russian.json"
+        }
+
     });
 };
 
