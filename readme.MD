@@ -52,7 +52,7 @@ Windows has GUI equivalent called Task Scheduler, that can be made to perform si
    <li></li>
 </ul>
 
-![ScreenShot](https://imgur.com/a/kFdNipC.png)
+![ScreenShot](https://imgur.com/1kYg58h.png)
 
 
 ## Задание 1
