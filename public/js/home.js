@@ -19,7 +19,7 @@ Products.prototype.init = function (category) {
             {data: 'title', name: 'title'},
             {data: 'image', name: 'image'},
             {data: 'description', name: 'description'},
-            {data: 'first_invoice', name: 'first_invoice', "defaultContent" : 'Not Set'},
+            {data: 'first_invoice', name: 'first_invoice', "defaultContent" : 'Н/П'},
             {data: 'url', name: 'url'},
             {data: 'price', name: 'price'},
             {data: 'amount', name: 'amount'},
